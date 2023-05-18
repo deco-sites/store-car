@@ -7772,7 +7772,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|a644f04e64ddc307d5353346f01dc4c2": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|e8e12422ece0b4934b9e4fc1f8b6fa6a": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -7790,13 +7790,13 @@
           ]
         }
       ],
-      "title": "WorkflowRef|a644f04e64ddc307d5353346f01dc4c2"
+      "title": "WorkflowRef|e8e12422ece0b4934b9e4fc1f8b6fa6a"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|a644f04e64ddc307d5353346f01dc4c2",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|e8e12422ece0b4934b9e4fc1f8b6fa6a",
           "title": "Workflow"
         },
         "id": {
@@ -10366,21 +10366,6 @@
       ],
       "title": "deco-cx/live/routes/_middleware.ts@MiddlewareConfig",
       "description": "Global configurations for ./routes/_middleware.ts route"
-    },
-    "ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint": {
-      "type": "object",
-      "properties": {
-        "handler": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler",
-          "description": "configure how to handle requests.",
-          "title": "Handler"
-        }
-      },
-      "required": [
-        "handler"
-      ],
-      "title": "deco-cx/live/routes/[...catchall].tsx@Entrypoint",
-      "description": "Site entrypoint, configure your audiences and routes."
     }
   },
   "root": {
@@ -10548,6 +10533,14 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L3dpc2hsaXN0LnRz"
         }
       ]
+    },
+    "routes": {
+      "title": "routes",
+      "anyOf": []
+    },
+    "islands": {
+      "title": "islands",
+      "anyOf": []
     },
     "handlers": {
       "title": "handlers",
@@ -10759,6 +10752,10 @@
         }
       ]
     },
+    "workflows": {
+      "title": "workflows",
+      "anyOf": []
+    },
     "entrypoint": {
       "type": "object",
       "required": [
@@ -10777,14 +10774,14 @@
         "./routes/[...catchall].tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
             }
           ]
         },
         "./routes/index.tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
             }
           ]
         }
@@ -10808,6 +10805,12 @@
             "$ref": "#/root/loaders"
           },
           {
+            "$ref": "#/root/routes"
+          },
+          {
+            "$ref": "#/root/islands"
+          },
+          {
             "$ref": "#/root/handlers"
           },
           {
@@ -10824,6 +10827,9 @@
           },
           {
             "$ref": "#/root/actions"
+          },
+          {
+            "$ref": "#/root/workflows"
           }
         ]
       }
