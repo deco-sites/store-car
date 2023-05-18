@@ -4,18 +4,17 @@ export interface Props {
   enableInspectVSCode?: boolean;
 }
 type teste = {
-  text: string
-}
+  text: string;
+};
 
-function Teste(props: teste){
-  return(
+function Teste(props: teste) {
+  return (
     <>
       <h1>Esse é um teste teste</h1>
       <h1>{props.text}</h1>
     </>
-  )
+  );
 }
-
 
 export default function GetStarted({ enableInspectVSCode }: Props) {
   return (
@@ -35,7 +34,7 @@ export default function GetStarted({ enableInspectVSCode }: Props) {
           </div>
           <div class="w-full md:w-1/2 p-6">
             <div class="md:max-w-lg">
-              <Teste text='hello '/>
+              <Teste text="hello " />
               <h2 class="mb-3 font-bold text-primary-dark text-4xl">
                 Welcome to Live!
               </h2>
